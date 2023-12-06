@@ -4,6 +4,24 @@
       "id": 1,
       "title": "Shrek",
       "rating": 5
+    },
+    {
+      "title": "Karate Kid",
+      "rating": "5",
+      "genre": "action",
+      "id": 2
+    },
+    {
+      "title": "Karate Kid",
+      "rating": "5",
+      "genre": "action",
+      "id": 3
+    },
+    {
+      "title": "Karate Kid",
+      "rating": "5",
+      "genre": "action",
+      "id": 4
     }
   ]
 }
