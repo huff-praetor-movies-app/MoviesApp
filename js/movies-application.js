@@ -16,6 +16,10 @@ import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./mo
 // console.log(newMovie)
 // })();
 
+//   setTimeout(() => {
+//         document.getElementsByTagName("body")[0].style.background = "orangered";
+//     }, 2000);
+
 const populateMovies = () => {
     getMovies().then(movies => {
         let insert = document.querySelector('.cards')
@@ -27,9 +31,16 @@ const populateMovies = () => {
                                <p>${movie.genre}</p>`
             insert.appendChild(div)
 
+
+            document.querySelector('.card').addEventListener("click", evt => {
+                evt.preventDefault()
+                document.querySelector('#update').showModal();
+            })
+
         }
     });
 }
 populateMovies()
+
 
 
