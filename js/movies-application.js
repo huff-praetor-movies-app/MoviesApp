@@ -1,4 +1,4 @@
-const getMovies = async(id) =>{
+const getMovie = async(id) =>{
     try{
     const movieUrl = `http://localhost:3000/movies/${id}`;
     const moviesResponse = await fetch(movieUrl);
@@ -8,4 +8,17 @@ const getMovies = async(id) =>{
     console.error(e)
     }
 }
-getMovies(1);
+getMovie(1);
+
+const getMovies = async () => {
+    try{
+        const movieUrl = 'http://localhost:3000/movies';
+        const moviesResponse = await fetch(movieUrl);
+        const movies = await moviesResponse.json();
+        console.log(movies);
+    }catch(e){
+        console.error(e)
+    }
+}
+
+getMovies()
