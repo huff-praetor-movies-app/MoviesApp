@@ -1,6 +1,6 @@
 import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./moviesAPI.js";
 const insert = document.querySelector('.cards')
-
+let id2
 
 function handleSearch() {
     const searchInput = document.querySelector('.form-control');
@@ -94,6 +94,7 @@ function updateForm(id)  {
         formRating.value = movie.rating;
         formGenre.value = movie.genre;
         document.querySelector('#update').showModal();
+        id2 = id
         load.close()
     })
 
@@ -108,15 +109,30 @@ document.querySelector('#submitUpdate').addEventListener("click", (event) => {
     document.querySelector('#update').close()
     let title = document.querySelector('#update-title').value;
     let rating = document.querySelector('#update-rating').value;
+    if (rating >=5) {
+        rating = 5
+    }else if (rating <=0) {
+        rating = 0
+    }else if (isNaN(rating)){
+        rating = 0
+    }
     let genre = document.querySelector('#update-genre').value;
-    update(id, {title, rating, genre})
+    console.log(id)
+    update(id2, {title, rating, genre})
     }
 )
 document.querySelector('#createNewMovie').addEventListener("click", (event) => {
         event.preventDefault();
         document.querySelector('#create').close()
         let title = document.querySelector('#create-title').value;
-        let rating = document.querySelector('#create-rating').value;
+        let rating = parseFloat(document.querySelector('#create-rating').value);
+        if (rating >=5) {
+            rating = 5
+        }else if (rating <=0) {
+            rating = 0
+        }else if (isNaN(rating)){
+            rating = 0
+        }
         let genre = document.querySelector('#create-genre').value;
         create({title, rating, genre})
 
@@ -165,3 +181,7 @@ function drawMovie(id) {
         }); load.close();
 
 }
+
+document.querySelector('#cancelCreate').addEventListener('click', () =>{
+    document.querySelector('#create').close()
+})

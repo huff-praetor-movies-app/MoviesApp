@@ -46,3 +46,42 @@
     bottom: 8px;
     right: 38px;
 }
+
+.loading {
+    border: none;
+}
+.loading::backdrop{
+    background: hsl(0 0% 0% / 40%);
+}
+
+.flexform{
+    display : flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.createheader{
+    line-height: 1;
+    margin-top: 0;
+}
+.create {
+    margin-left: .75rem;
+}
+#createNewMovie{
+    flex-grow: 1;
+    background-color: hsl(145 45% 50%);
+    margin: .5rem 0 0 42%;
+}
+
+#cancelCreate{
+    width: 10ch;
+    margin-top: 1rem;
+    background-color: hsl(5 40% 50%)
+}
+#create{
+    max-width: 50vw;
+}
+#create::backdrop
+{
+    background: hsl(0 0% 97% / 90%);
+}

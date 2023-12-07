@@ -32,14 +32,17 @@
     </form> <button id="cancelUpdate">Cancel</button>
 </dialog>
 <dialog id="create">
+    <div class="flexform">
+        <h2 class="createheader">Add a new move to the database</h2>
     <form name="createForm" method="dialog" id="createForm">
         <label for="create-title">Movie title</label>
         <input type="text"  id="create-title">
-        <label for="create-rating">Movie rating</label>
-        <input type="text"  id="create-rating"><label for="create-genre">Movie genre</label>
+        <label class="create" for="create-rating">Movie rating</label>
+        <input type="text"  id="create-rating"><label class="create" for="create-genre">Movie genre</label>
         <input type="text"  id="create-genre">
-        <button id="createNewMovie">Update</button>
+        <button id="createNewMovie">Add to Database</button>
     </form> <button id="cancelCreate">Cancel</button>
+    </div>
 </dialog>
 <dialog class="loading" id="loading">
 <div class="loader"></div>
