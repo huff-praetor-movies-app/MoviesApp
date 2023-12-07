@@ -22,6 +22,8 @@ export const getMovies = async () => {
     }
 }
 
+
+
 // create movie fetch put
 export const createMovie = async (movie) =>{
     try{
@@ -54,7 +56,7 @@ export const updateMovie = async (id, movie) =>{
         };
         const response = await fetch(url,options);
         const updatedMovie = await response.json();
-        return updatedMovie;
+        populateMovies();
     }catch(e){
         console.error(e)
     }
@@ -74,3 +76,4 @@ export const deleteMovie = async (id)=>{
 
     }
 }
+

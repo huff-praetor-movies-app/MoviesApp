@@ -9,6 +9,34 @@ const addNewMovie = () =>{
 }
 addNewMovie();
 
+const del = async(id) => {
+    try {
+        await deleteMovie(id)
+        populateMovies()
+    }catch (e) {
+        console.error(e)
+    }
+}
+
+const update = async (id, movie) => {
+    try {
+        await updateMovie(id, movie)
+        populateMovies()
+    }catch(e) {
+        console.error(e)
+    }
+}
+const create = async (movie) => {
+    try {
+        await createMovie(movie)
+        populateMovies()
+    }catch(e) {
+        console.error(e)
+    }
+}
+
+
+
 // console.log(getMovie(1))
 //
 //
@@ -61,8 +89,7 @@ const populateMovies = () => {
                 evt.stopPropagation()
                 id = evt.target.dataset.id;
                 console.log(id);
-                deleteMovie(id);
-                populateMovies();
+                del(id)
             })
 
             image.addEventListener("click", evt => {
@@ -103,8 +130,7 @@ document.querySelector('#submitUpdate').addEventListener("click", (event) => {
     let title = document.querySelector('#update-title').value;
     let rating = document.querySelector('#update-rating').value;
     let genre = document.querySelector('#update-genre').value;
-    updateMovie(id, {title, rating, genre})
-    populateMovies()
+    update(id, {title, rating, genre})
     }
 )
 document.querySelector('#createNewMovie').addEventListener("click", (event) => {
@@ -113,8 +139,7 @@ document.querySelector('#createNewMovie').addEventListener("click", (event) => {
         let title = document.querySelector('#create-title').value;
         let rating = document.querySelector('#create-rating').value;
         let genre = document.querySelector('#create-genre').value;
-        createMovie({title, rating, genre})
-        populateMovies()
+        create({title, rating, genre})
 
     }
 )

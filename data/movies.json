@@ -11,6 +11,12 @@
       "rating": "40",
       "genre": "action",
       "id": 2
+    },
+    {
+      "title": "james and the giant peach",
+      "rating": "35",
+      "genre": "claymation",
+      "id": 3
     }
   ]
 }
