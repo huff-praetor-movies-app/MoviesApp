@@ -44,10 +44,26 @@ const populateMovies = () => {
                                 <p>${movie.rating} of 50</p>
                                <p>${movie.genre}</p>`
             insert.appendChild(div)
+
             const image= document.createElement('img');
             image.setAttribute('src', 'img/icons8-edit-50.png');
             image.setAttribute(`data-id`, movie.id)
             div.appendChild(image);
+
+            const imageDelete= document.createElement('img');
+            imageDelete.setAttribute('src', 'img/icons8-delete-50.png');
+            imageDelete.setAttribute(`data-id`, movie.id)
+            div.appendChild(imageDelete);
+
+            imageDelete.addEventListener("click", evt => {
+                load.showModal()
+                evt.preventDefault()
+                evt.stopPropagation()
+                id = evt.target.dataset.id;
+                console.log(id);
+                deleteMovie(id);
+                populateMovies();
+            })
 
             image.addEventListener("click", evt => {
                 evt.preventDefault()
