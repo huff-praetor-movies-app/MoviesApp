@@ -66,7 +66,7 @@ document.querySelector('#cancelUpdate').addEventListener('click', () => {
     document.querySelector('#update').close()
 })
 
-//the following is in work on how to get back info from modal--ira
+//need to convert into a function --ira
 document.querySelector('#submitUpdate').addEventListener("click", (event) => {
     event.preventDefault();
     document.querySelector('#update').close()
