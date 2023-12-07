@@ -44,7 +44,7 @@ export const createMovie = async (movie) =>{
 //Update movie
 export const updateMovie = async (id, movie) =>{
     try{
-        const url = 'http://localhost:3000/movies';
+        const url = 'http://localhost:3000/movies/' + id;
         const options = {
             method: 'PATCH',
             headers: {
