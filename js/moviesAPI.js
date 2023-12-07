@@ -56,7 +56,7 @@ export const updateMovie = async (id, movie) =>{
         };
         const response = await fetch(url,options);
         const updatedMovie = await response.json();
-        populateMovies();
+        return updatedMovie
     }catch(e){
         console.error(e)
     }
