@@ -1,11 +1,18 @@
 import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./moviesAPI.js";
 
+const addNewMovie = () =>{
+    const addImage = document.querySelector('.addMovieImage');
+    addImage.addEventListener("click", )
+}
+
+
 // console.log(getMovie(1))
 //
 //
 // console.log(getMovies());
 //
 //
+
 // // Create new movie
 // (async () => {
 //     const newMovie = await createMovie({
@@ -19,6 +26,7 @@ import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./mo
 //   setTimeout(() => {
 //         document.getElementsByTagName("body")[0].style.background = "orangered";
 //     }, 2000);
+
 const load = document.querySelector('#loading')
 let id
 const populateMovies = () => {
@@ -29,18 +37,21 @@ const populateMovies = () => {
         for (let movie of movies) {
             let div = document.createElement('div');
             div.classList.add('card');
-            div.setAttribute(`data-id`, movie.id)
             div.innerHTML = `<h3 class=title>${movie.title}</h3>
                                 <p>${movie.rating} of 50</p>
                                <p>${movie.genre}</p>`
             insert.appendChild(div)
-            div.addEventListener("click", evt => {
+            const image= document.createElement('img');
+            image.setAttribute('src', 'img/icons8-edit-50.png');
+            image.setAttribute(`data-id`, movie.id)
+            div.appendChild(image);
+
+            image.addEventListener("click", evt => {
                 evt.preventDefault()
                 evt.stopPropagation()
                 id = evt.target.dataset.id;
                 console.log(id);
                 updateForm(id)
-
             })
         }load.close();
     });
@@ -75,6 +86,16 @@ document.querySelector('#submitUpdate').addEventListener("click", (event) => {
     let genre = document.querySelector('#update-genre').value;
     updateMovie(id, {title, rating, genre})
     populateMovies()
+    }
+)
+document.querySelector('#createNewMovie').addEventListener("click", (event) => {
+        event.preventDefault();
+        document.querySelector('#create').close()
+        let title = document.querySelector('#create-title').value;
+        let rating = document.querySelector('#create-rating').value;
+        let genre = document.querySelector('#create-genre').value;
+        createMovie({title, rating, genre})
+        populateMovies()
 
     }
 )

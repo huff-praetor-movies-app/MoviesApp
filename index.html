@@ -7,7 +7,9 @@
 </head>
 <body>
 <header class="head">
-
+<div>
+    <img  alt="#" src="img/icons8-plus-50.png" id="addMovieImage"> <img>
+</div>
 </header>
 <main class="main">
     <section class="cards">
@@ -22,6 +24,16 @@
         <input type="text"  id="update-genre">
         <button id="submitUpdate">Update</button>
     </form> <button id="cancelUpdate">Cancel</button>
+</dialog>
+<dialog id="create">
+    <form name="createForm" method="dialog" id="createForm">
+        <label for="create-title">Movie title</label>
+        <input type="text"  id="create-title">
+        <label for="create-rating">Movie rating</label>
+        <input type="text"  id="create-rating"><label for="create-genre">Movie genre</label>
+        <input type="text"  id="create-genre">
+        <button id="submitCreate">Update</button>
+    </form> <button id="cancelCreate">Cancel</button>
 </dialog>
 <dialog class="loading" id="loading">
 <div class="loader"></div>

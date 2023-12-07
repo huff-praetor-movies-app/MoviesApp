@@ -2,13 +2,13 @@
   "movies": [
     {
       "id": 1,
-      "title": "Shrek",
-      "rating": "5",
+      "title": "Shrek 3",
+      "rating": "32",
       "genre": "comedy"
     },
     {
       "title": "Karate Kid",
-      "rating": "5",
+      "rating": "40",
       "genre": "action",
       "id": 2
     }
