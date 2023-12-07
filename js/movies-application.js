@@ -1,5 +1,7 @@
 import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./moviesAPI.js";
 const insert = document.querySelector('.cards')
+
+
 function handleSearch() {
     const searchInput = document.querySelector('.form-control');
     const movieName = searchInput.value.toLowerCase();
@@ -7,18 +9,21 @@ function handleSearch() {
     load.showModal()
     getMovies().then(movies =>{
         for (let movie of movies){
-            if (movieName == '') {
-                populateMovies()
-            }
-            else if(movie.title.toLowerCase().includes(movieName)){
+            if(movie.title.toLowerCase().includes(movieName)){
                 id = movie.id;
                 showSearchedMovie(id);
+            }
+            else if(movie.genre.toLowerCase().includes(movieName)){
+                id = movie.id;
+                showSearchedMovie(id);
+            }
+            else{
+                load.close();
             }
         }
     })
 }
 function showSearchedMovie(id){
-
     drawMovie(id)
 }
 
@@ -125,7 +130,7 @@ function drawMovie(id) {
             let div = document.createElement('div');
             div.classList.add('card');
             div.innerHTML = `<h3 class=title>${movie.title}</h3>
-                                <p>${movie.rating} of 50</p>
+                                <p>${movie.rating} of 5</p>
                                <p>${movie.genre}</p>`
             insert.appendChild(div)
 
