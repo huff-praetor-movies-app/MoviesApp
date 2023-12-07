@@ -14,3 +14,35 @@
     50%  {width:60px;height: 60px;transform: rotate(180deg)}
     100% {transform: rotate(360deg)}
 }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin: .5em;
+    padding: 1rem;
+    width: 15rem;
+    text-align: center;
+}
+.card h3{
+    margin-top: 1px;
+}
+.card p{
+    margin-right: 8px;
+}
+#delete-image{
+    position: absolute;
+    height: 30px;
+    bottom: 8px;
+    right: 8px;
+}
+#edit-image{
+    position: absolute;
+    height: 30px;
+    bottom: 8px;
+    right: 38px;
+}

@@ -76,11 +76,13 @@ const populateMovies = () => {
             const image= document.createElement('img');
             image.setAttribute('src', 'img/icons8-edit-50.png');
             image.setAttribute(`data-id`, movie.id)
+            image.setAttribute('id', 'edit-image')
             div.appendChild(image);
 
             const imageDelete= document.createElement('img');
             imageDelete.setAttribute('src', 'img/icons8-delete-50.png');
             imageDelete.setAttribute(`data-id`, movie.id)
+            imageDelete.setAttribute('id', 'delete-image')
             div.appendChild(imageDelete);
 
             imageDelete.addEventListener("click", evt => {

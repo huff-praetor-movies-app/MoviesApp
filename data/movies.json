@@ -17,6 +17,12 @@
       "rating": "35",
       "genre": "claymation",
       "id": 3
+    },
+    {
+      "title": "Kickboxer",
+      "rating": "49",
+      "genre": "comedy",
+      "id": 4
     }
   ]
 }
