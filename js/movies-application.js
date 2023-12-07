@@ -1,5 +1,33 @@
 import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./moviesAPI.js";
 
+function handleSearch() {
+    const searchInput = document.querySelector('.form-control');
+    const movieName = searchInput.value.toLowerCase();
+    getMovies().then(movies =>{
+        for (let movie of movies){
+            if(movie.title.toLowerCase().includes(movieName)){
+                id = movie.id;
+                showSearchedMovie(id);
+                break;
+            }
+        }
+    })
+}
+function showSearchedMovie(id){
+    getMovie(id).then(movie =>{
+        console.log(movie);
+    })
+}
+
+const searchMovies = () =>{
+    const submitButton = document.querySelector('#submit');
+    submitButton.addEventListener("click", (e)=>{
+        e.preventDefault();
+        handleSearch()
+    })
+}
+searchMovies()
+
 const addNewMovie = () =>{
     const addImage = document.querySelector('#addMovieImage');
     addImage.addEventListener("click", (e)=>{
@@ -34,30 +62,6 @@ const create = async (movie) => {
         console.error(e)
     }
 }
-
-
-
-// console.log(getMovie(1))
-//
-//
-// console.log(getMovies());
-//
-//
-
-// // Create new movie
-// (async () => {
-//     const newMovie = await createMovie({
-//     title: 'Karate Kid',
-//     rating: '5',
-//     genre: 'action'
-// });
-// console.log(newMovie)
-// })();
-
-//   setTimeout(() => {
-//         document.getElementsByTagName("body")[0].style.background = "orangered";
-//     }, 2000);
-
 const load = document.querySelector('#loading')
 let id
 const populateMovies = () => {
