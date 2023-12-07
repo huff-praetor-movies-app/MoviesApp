@@ -3,7 +3,8 @@
     {
       "id": 1,
       "title": "Shrek",
-      "rating": 5
+      "rating": "5",
+      "genre": "comedy"
     },
     {
       "title": "Karate Kid",

@@ -20,10 +20,12 @@ import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./mo
 //         document.getElementsByTagName("body")[0].style.background = "orangered";
 //     }, 2000);
 const load = document.querySelector('#loading')
+let id
 const populateMovies = () => {
     load.showModal()
     getMovies().then(movies => {
         let insert = document.querySelector('.cards')
+        insert.innerHTML = ''
         for (let movie of movies) {
             let div = document.createElement('div');
             div.classList.add('card');
@@ -35,7 +37,7 @@ const populateMovies = () => {
             div.addEventListener("click", evt => {
                 evt.preventDefault()
                 evt.stopPropagation()
-                let id = evt.target.dataset.id;
+                id = evt.target.dataset.id;
                 console.log(id);
                 updateForm(id)
 
@@ -60,9 +62,19 @@ function updateForm(id)  {
     })
 
 }
-document.querySelector('#cancelUpdate').addEventListener('click', document.querySelector('#update').close())
+document.querySelector('#cancelUpdate').addEventListener('click', () => {
+    document.querySelector('#update').close()
+})
 
-//the following is in work on how to get back info from modal--ira
-// document.querySelector('#submitUpdate').addEventListener("click", (event) => {
-//     event.preventDefault(); // We don't want to submit this fake form
-//     document.querySelector('#update').close(console.log(document.querySelector('#updateForm').value))})
+//need to convert into a function --ira
+document.querySelector('#submitUpdate').addEventListener("click", (event) => {
+    event.preventDefault();
+    document.querySelector('#update').close()
+    let title = document.querySelector('#update-title').value;
+    let rating = document.querySelector('#update-rating').value;
+    let genre = document.querySelector('#update-genre').value;
+    updateMovie(id, {title, rating, genre})
+    populateMovies()
+
+    }
+)
