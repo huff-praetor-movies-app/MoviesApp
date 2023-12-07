@@ -87,10 +87,13 @@ header h1{
 }
 
 .flexform{
-    display : flex;
-    justify-content: center;
-    flex-flow: column wrap;
-    align-items: center;
+    display : grid;
+    grid-template-columns: 1fr;
+
+}
+#createForm{
+    display: grid;
+    grid-template-columns: 1fr;
 }
 .createheader{
     font-family: 'Cinzel', serif;
@@ -100,21 +103,16 @@ header h1{
 dialog{
     font-family: 'Cinzel', serif;
 }
-.create {
-    margin-left: .75rem;
-}
+
 button{
     font-family: 'Cinzel', serif;
 }
 #createNewMovie{
-    flex-grow: 1;
+    margin-top: .2rem;
     background-color: hsl(145 45% 50%);
-    margin: .5rem 0 0 42%;
 }
 
 #cancelCreate{
-    width: 10ch;
-    margin-top: 1rem;
     background-color: hsl(5 40% 50%)
 }
 #create{
@@ -126,4 +124,22 @@ button{
 }
 #update::backdrop{
     background:  hsl(238 38% 29% / 80%);
+}
+#update{
+    max-width: 50vw;
+}
+#updateForm{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#updateForm input{
+    width: 15rem;
+}
+#submitUpdate{
+    margin-top: .2rem;
+    background-color: hsl(145 45% 50%);
+}
+
+#cancelUpdate{
+    background-color: hsl(5 40% 50%)
 }
