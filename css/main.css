@@ -143,3 +143,20 @@ button{
 #cancelUpdate{
     background-color: hsl(5 40% 50%)
 }
+
+dialog[open]{
+    animation: fade-in 500ms forwards;
+}
+
+dialog[open]::backdrop{
+    animation: fade-in 500ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
