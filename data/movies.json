@@ -11,6 +11,12 @@
       "rating": "40",
       "genre": "action",
       "id": 2
+    },
+    {
+      "title": "Kickboxer",
+      "rating": "40",
+      "genre": "Action",
+      "id": 3
     }
   ]
 }

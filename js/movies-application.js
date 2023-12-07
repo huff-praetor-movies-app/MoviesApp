@@ -1,10 +1,13 @@
 import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./moviesAPI.js";
 
 const addNewMovie = () =>{
-    const addImage = document.querySelector('.addMovieImage');
-    addImage.addEventListener("click", )
+    const addImage = document.querySelector('#addMovieImage');
+    addImage.addEventListener("click", (e)=>{
+        e.preventDefault()
+        document.querySelector('#create').showModal();
+    })
 }
-
+addNewMovie();
 
 // console.log(getMovie(1))
 //
