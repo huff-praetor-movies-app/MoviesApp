@@ -1,22 +1,25 @@
 import { deleteMovie, updateMovie, getMovie, createMovie, getMovies } from "./moviesAPI.js";
-
+const insert = document.querySelector('.cards')
 function handleSearch() {
     const searchInput = document.querySelector('.form-control');
     const movieName = searchInput.value.toLowerCase();
+    insert.innerHTML = ''
+    load.showModal()
     getMovies().then(movies =>{
         for (let movie of movies){
-            if(movie.title.toLowerCase().includes(movieName)){
+            if (movieName == '') {
+                populateMovies()
+            }
+            else if(movie.title.toLowerCase().includes(movieName)){
                 id = movie.id;
                 showSearchedMovie(id);
-                break;
             }
         }
     })
 }
 function showSearchedMovie(id){
-    getMovie(id).then(movie =>{
-        console.log(movie);
-    })
+
+    drawMovie(id)
 }
 
 const searchMovies = () =>{
@@ -67,48 +70,13 @@ let id
 const populateMovies = () => {
     load.showModal()
     getMovies().then(movies => {
-        let insert = document.querySelector('.cards')
         insert.innerHTML = ''
-        for (let movie of movies) {
-            let div = document.createElement('div');
-            div.classList.add('card');
-            div.innerHTML = `<h3 class=title>${movie.title}</h3>
-                                <p>${movie.rating} of 50</p>
-                               <p>${movie.genre}</p>`
-            insert.appendChild(div)
-
-            const image= document.createElement('img');
-            image.setAttribute('src', 'img/icons8-edit-50.png');
-            image.setAttribute(`data-id`, movie.id)
-            image.setAttribute('id', 'edit-image')
-            div.appendChild(image);
-
-            const imageDelete= document.createElement('img');
-            imageDelete.setAttribute('src', 'img/icons8-delete-50.png');
-            imageDelete.setAttribute(`data-id`, movie.id)
-            imageDelete.setAttribute('id', 'delete-image')
-            div.appendChild(imageDelete);
-
-            imageDelete.addEventListener("click", evt => {
-                load.showModal()
-                evt.preventDefault()
-                evt.stopPropagation()
-                id = evt.target.dataset.id;
-                console.log(id);
-                del(id)
-            })
-
-            image.addEventListener("click", evt => {
-                evt.preventDefault()
-                evt.stopPropagation()
-                id = evt.target.dataset.id;
-                console.log(id);
-                updateForm(id)
-            })
-        }load.close();
-    });
-
+        for (let i = 1; i <= movies.length; i++) {
+            drawMovie(i)
+        }
+    })
 }
+
 populateMovies()
 
 function updateForm(id)  {
@@ -149,3 +117,46 @@ document.querySelector('#createNewMovie').addEventListener("click", (event) => {
 
     }
 )
+
+
+function drawMovie(id) {
+    getMovie(id).then (movie => {
+
+            let div = document.createElement('div');
+            div.classList.add('card');
+            div.innerHTML = `<h3 class=title>${movie.title}</h3>
+                                <p>${movie.rating} of 50</p>
+                               <p>${movie.genre}</p>`
+            insert.appendChild(div)
+
+            const image= document.createElement('img');
+            image.setAttribute('src', 'img/icons8-edit-50.png');
+            image.setAttribute(`data-id`, movie.id)
+            image.setAttribute('id', 'edit-image')
+            div.appendChild(image);
+
+            const imageDelete= document.createElement('img');
+            imageDelete.setAttribute('src', 'img/icons8-delete-50.png');
+            imageDelete.setAttribute(`data-id`, movie.id)
+            imageDelete.setAttribute('id', 'delete-image')
+            div.appendChild(imageDelete);
+
+            imageDelete.addEventListener("click", evt => {
+                load.showModal()
+                evt.preventDefault()
+                evt.stopPropagation()
+                id = evt.target.dataset.id;
+                console.log(id);
+                del(id)
+            })
+
+            image.addEventListener("click", evt => {
+                evt.preventDefault()
+                evt.stopPropagation()
+                id = evt.target.dataset.id;
+                console.log(id);
+                updateForm(id)
+            })
+        }); load.close();
+
+}

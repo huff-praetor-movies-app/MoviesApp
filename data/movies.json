@@ -23,6 +23,12 @@
       "rating": "49",
       "genre": "comedy",
       "id": 4
+    },
+    {
+      "title": "Sundance kid",
+      "rating": "3",
+      "genre": "western",
+      "id": 5
     }
   ]
 }
