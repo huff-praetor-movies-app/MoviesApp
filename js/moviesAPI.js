@@ -77,18 +77,39 @@ export const deleteMovie = async (id)=>{
     }
 }
 
-const options = {
-    method: 'GET',
-    headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYWRhNjhiZTI0MDY1MjMzYWIyNGZkYzg4MzIyZjJmMSIsInN1YiI6IjY1NzBjYmI4MWIxZjNjMDBlMWIzYjI1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XbaPrHCHmLygXlXoif-NtlufxTDR3anx8VIUaoZsBAw'
-    }
-};
+// const options = {
+//     method: 'GET',
+//     headers: {
+//         accept: 'application/json',
+//         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYWRhNjhiZTI0MDY1MjMzYWIyNGZkYzg4MzIyZjJmMSIsInN1YiI6IjY1NzBjYmI4MWIxZjNjMDBlMWIzYjI1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XbaPrHCHmLygXlXoif-NtlufxTDR3anx8VIUaoZsBAw'
+//     }
+// };
+//
+// export const getPoster =(title) => {
+//     console.log(title)
+//     fetch(`https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`, options)
+//         .then(response => response.json())
+//         .then(movie => movie.results[0].poster_path)
+//         .catch(err => console.error(err));
+// }
 
-export const getPoster =(title) => {
-    console.log(title)
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`, options)
-        .then(response => response.json())
-        .then(movie => movie.results[0].poster_path)
-        .catch(err => console.error(err));
+export const getPoster = async (title)=>{
+    try{
+        const url = `https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`;
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYWRhNjhiZTI0MDY1MjMzYWIyNGZkYzg4MzIyZjJmMSIsInN1YiI6IjY1NzBjYmI4MWIxZjNjMDBlMWIzYjI1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XbaPrHCHmLygXlXoif-NtlufxTDR3anx8VIUaoZsBAw'
+            }
+            };
+        const response = await fetch(url,options);
+        const movie = await response.json();
+        console.log(movie);
+        const posterPath = await movie.results[0].poster_path
+        console.log(posterPath);
+        return posterPath.toString();
+    }catch (e) {
+
+    }
 }

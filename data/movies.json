@@ -4,49 +4,57 @@
       "id": 1,
       "title": "Shrek 3",
       "rating": 5,
-      "genre": "comedy"
+      "genre": "comedy",
+      "poster": "https://image.tmdb.org/t/p/original/n4SexGGQzI26E269tfpa80MZaGV.jpg"
     },
     {
       "title": "Karate Kid",
       "rating": 5,
       "genre": "action",
-      "id": 2
+      "id": 2,
+      "poster": "https://image.tmdb.org/t/p/original/bHjLC5GuBfeyW6ZE07x6TalKj19.jpg"
     },
     {
       "title": "james and the giant peach",
       "rating": 5,
       "genre": "claymation",
-      "id": 3
+      "id": 3,
+      "poster": "https://image.tmdb.org/t/p/original/nl2oB6EbD1fHFuP2TLUHDtqs7Ux.jpg"
     },
     {
       "title": "Kickboxer",
       "rating": 5,
       "genre": "comedy",
-      "id": 4
+      "id": 4,
+      "poster": "https://image.tmdb.org/t/p/original/eP1GzZxRL7VpIEpeawtAjlYhNQj.jpg"
     },
     {
-      "title": "Shrek 3",
-      "rating": 5,
-      "genre": "comedy, gold",
-      "id": 5
-    },
-    {
-      "title": "the big lebouski",
+      "title": "the big lebowski",
       "rating": 5,
       "genre": "acid trip",
-      "id": 6
+      "id": 6,
+      "poster": "https://image.tmdb.org/t/p/original/3bv6WAp6BSxxYvB5ozKFUYuRA8C.jpg"
     },
     {
       "title": "step brothers",
       "rating": 0,
       "genre": "comedy",
-      "id": 7
+      "id": 7,
+      "poster": "https://image.tmdb.org/t/p/original/jV0eDViuTRf9cmj4H0JNvbvaNbR.jpg"
     },
     {
       "title": "coraline",
       "rating": 5,
       "genre": "stopmotion",
-      "id": 8
+      "id": 8,
+      "poster": "https://image.tmdb.org/t/p/original/4jeFXQYytChdZYE9JYO7Un87IlW.jpg"
+    },
+    {
+      "title": "finding nemo",
+      "rating": 3,
+      "genre": "animation",
+      "poster": "https://image.tmdb.org/t/p/original/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg",
+      "id": 9
     }
   ]
 }

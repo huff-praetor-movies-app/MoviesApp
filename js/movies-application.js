@@ -4,9 +4,8 @@ const insert = document.querySelector('.cards')
 const load = document.querySelector('#loading')
 let id
 let id2
+let posterJPG
 
-let poster = getPoster('shrek 3')
-console.log(poster);
 
 function handleSearch() {
     const searchInput = document.querySelector('.form-control');
@@ -78,8 +77,8 @@ const populateMovies = () => {
     load.showModal()
     getMovies().then(movies => {
         insert.innerHTML = ''
-        for (let i = 1; i <= movies.length; i++) {
-            drawMovie(i)
+        for (let movie of movies) {
+            drawMovie(movie.id)
         }
     })
 }
@@ -104,11 +103,20 @@ function updateForm(id) {
 document.querySelector('#cancelUpdate').addEventListener('click', () => {
     document.querySelector('#update').close()
 })
+async function posterGet(title) {
+    posterJPG = await getPoster(title)
+    return posterJPG
+}
+
+
 
 //need to convert into a function --ira
 document.querySelector('#submitUpdate').addEventListener("click", (event) => {
-        event.preventDefault();
-        document.querySelector('#update').close()
+    event.preventDefault();
+    document.querySelector('#update').close()
+    update2()
+})
+    async function update2  (){
         let title = document.querySelector('#update-title').value;
         let rating = document.querySelector('#update-rating').value;
         if (rating >= 5) {
@@ -119,27 +127,33 @@ document.querySelector('#submitUpdate').addEventListener("click", (event) => {
             rating = 0
         }
         let genre = document.querySelector('#update-genre').value;
+        await posterGet(title)
+    let poster = 'https://image.tmdb.org/t/p/original' + posterJPG
 
-    console.log(id)
-        update(id2, {title, rating, genre, poster})
+    console.log(id2);
+    update(id2, {title, rating, genre, poster})
     }
-)
 document.querySelector('#createNewMovie').addEventListener("click", (event) => {
-        event.preventDefault();
-        document.querySelector('#create').close()
-        let title = document.querySelector('#create-title').value;
-        let rating = parseFloat(document.querySelector('#create-rating').value);
-        if (rating >= 5) {
-            rating = 5
-        } else if (rating <= 0) {
-            rating = 0
-        } else if (isNaN(rating)) {
-            rating = 0
-        }
-        let genre = document.querySelector('#create-genre').value;
-        create({title, rating, genre})
+    event.preventDefault();
+    document.querySelector('#create').close()
+    create2()
     }
 )
+async function create2() {
+    let title = document.querySelector('#create-title').value;
+    let rating = parseFloat(document.querySelector('#create-rating').value);
+    if (rating >= 5) {
+        rating = 5
+    } else if (rating <= 0) {
+        rating = 0
+    } else if (isNaN(rating)) {
+        rating = 0
+    }
+    await posterGet(title)
+    let poster = 'https://image.tmdb.org/t/p/original' + posterJPG
+    let genre = document.querySelector('#create-genre').value;
+    create({title, rating, genre, poster})
+}
 
 
 async function drawMovie(id)  {
@@ -147,6 +161,7 @@ async function drawMovie(id)  {
         let div = document.createElement('div');
         div.classList.add('card');
         div.innerHTML = `<h3 class=title>${movie.title}</h3>
+                           <img class="poster" src="${movie.poster}">
                                 <p>${movie.rating} of 5</p>
                                <p>${movie.genre}</p>`
         insert.appendChild(div)

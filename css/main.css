@@ -175,3 +175,6 @@ dialog[open]::backdrop{
         opacity: 100%;
     }
 }
+.poster{
+    height: 220px;
+}
