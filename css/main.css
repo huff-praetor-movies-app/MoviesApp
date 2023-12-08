@@ -98,9 +98,10 @@ header h1{
     bottom: 8px;
     right: 38px;
 }
-
-.loading {
+#loading {
     border: none;
+    border-radius: 50%;
+    background: transparent;
 }
 .loading::backdrop{
     background: hsl(0 0% 0% / 40%);
