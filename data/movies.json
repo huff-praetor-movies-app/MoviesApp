@@ -24,7 +24,7 @@
     {
       "title": "Kickboxer",
       "rating": 5,
-      "genre": "comedy",
+      "genre": "Action",
       "id": 4,
       "poster": "https://image.tmdb.org/t/p/original/eP1GzZxRL7VpIEpeawtAjlYhNQj.jpg"
     },
@@ -37,7 +37,7 @@
     },
     {
       "title": "step brothers",
-      "rating": 0,
+      "rating": "3",
       "genre": "comedy",
       "id": 7,
       "poster": "https://image.tmdb.org/t/p/original/jV0eDViuTRf9cmj4H0JNvbvaNbR.jpg"
