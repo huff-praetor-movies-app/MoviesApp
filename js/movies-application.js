@@ -159,9 +159,13 @@ async function create2() {
 async function drawMovie(id)  {
    await getMovie(id).then(movie => {
         let div = document.createElement('div');
+        let movieposter
+        if (movie.poster.includes(undefined)) {
+            movieposter = "img/default-movie.jpg"}
+        else  movieposter = movie.poster
         div.classList.add('card');
         div.innerHTML = `<h3 class=title>${movie.title}</h3>
-                           <img class="poster" src="${movie.poster}">
+                           <img class="poster" src="${movieposter}">
                                 <p>${movie.rating} of 5</p>
                                <p>${movie.genre}</p>`
         insert.appendChild(div)

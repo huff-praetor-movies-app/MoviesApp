@@ -55,6 +55,20 @@
       "genre": "animation",
       "poster": "https://image.tmdb.org/t/p/original/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg",
       "id": 9
+    },
+    {
+      "title": "the secret life of walter mitty",
+      "rating": 3,
+      "genre": "adventure",
+      "poster": "https://image.tmdb.org/t/p/original/tY6ypjKOOtujhxiSwTmvA4OZ5IE.jpg",
+      "id": 10
+    },
+    {
+      "title": "statix",
+      "rating": "3",
+      "genre": "adventure",
+      "poster": "https://image.tmdb.org/t/p/originalundefined",
+      "id": 11
     }
   ]
 }
