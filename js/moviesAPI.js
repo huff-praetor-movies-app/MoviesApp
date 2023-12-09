@@ -1,3 +1,4 @@
+import key from "./key.js"
 //get movie by id
 export const getMovie = async(id) =>{
     try{
@@ -100,7 +101,7 @@ export const getPoster = async (title)=>{
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYWRhNjhiZTI0MDY1MjMzYWIyNGZkYzg4MzIyZjJmMSIsInN1YiI6IjY1NzBjYmI4MWIxZjNjMDBlMWIzYjI1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XbaPrHCHmLygXlXoif-NtlufxTDR3anx8VIUaoZsBAw'
+                Authorization: `Bearer ${key}`
             }
             };
         const response = await fetch(url,options);
