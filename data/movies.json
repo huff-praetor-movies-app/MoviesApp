@@ -64,13 +64,6 @@
       "id": 10
     },
     {
-      "title": "statix",
-      "rating": "3",
-      "genre": "adventure",
-      "poster": "https://image.tmdb.org/t/p/originalundefined",
-      "id": 11
-    },
-    {
       "title": "shrek",
       "rating": 5,
       "genre": "comedy",
