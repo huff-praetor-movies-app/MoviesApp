@@ -32,6 +32,9 @@ import {deleteMovie, updateMovie, getMovie, createMovie, getMovies, getPoster} f
                 } else if (movie.genre.toLowerCase().includes(movieName)) {
                     id = movie.id;
                     showSearchedMovie(id);
+                } else if (parseInt(movie.rating) === parseInt(movieName)) {
+                    id = movie.id;
+                    showSearchedMovie(id)
                 }
             }
         });

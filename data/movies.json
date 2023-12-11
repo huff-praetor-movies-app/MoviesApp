@@ -1,7 +1,7 @@
 {
   "movies": [
     {
-      "title": "Karate Kid",
+      "title": " the Karate Kid",
       "rating": 5,
       "genre": "action",
       "id": 2,
@@ -69,6 +69,13 @@
       "genre": "Drama",
       "poster": "https://image.tmdb.org/t/p/original/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
       "id": 13
+    },
+    {
+      "title": "Sweeney Todd: The Demon Barber of Fleet Street",
+      "rating": "3",
+      "genre": "musicle",
+      "poster": "https://image.tmdb.org/t/p/original/gAW4J1bkRjZKmFsJsIiOBASeoAp.jpg",
+      "id": 14
     }
   ]
 }
