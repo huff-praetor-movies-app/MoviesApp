@@ -1,13 +1,6 @@
 {
   "movies": [
     {
-      "id": 1,
-      "title": "Shrek 4",
-      "rating": 5,
-      "genre": "comedy",
-      "poster": "https://image.tmdb.org/t/p/original/6HrfPZtKcGmX2tUWW3cnciZTaSD.jpg"
-    },
-    {
       "title": "Karate Kid",
       "rating": 5,
       "genre": "action",
@@ -69,6 +62,13 @@
       "genre": "comedy",
       "poster": "https://image.tmdb.org/t/p/original/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg",
       "id": 12
+    },
+    {
+      "title": "Gladiator",
+      "rating": 5,
+      "genre": "Drama",
+      "poster": "https://image.tmdb.org/t/p/original/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
+      "id": 13
     }
   ]
 }
