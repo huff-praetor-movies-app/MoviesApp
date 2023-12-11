@@ -1,3 +1,5 @@
+"use strict";
+
 import {deleteMovie, updateMovie, getMovie, createMovie, getMovies, getPoster} from "./moviesAPI.js";
 
 (() => {
