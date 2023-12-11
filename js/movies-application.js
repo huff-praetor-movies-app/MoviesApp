@@ -155,7 +155,6 @@ import {deleteMovie, updateMovie, getMovie, createMovie, getMovies, getPoster} f
         await posterGet(title)
         let poster = 'https://image.tmdb.org/t/p/original' + posterJPG
 
-        console.log(id2);
         update(id2, {title, rating, genre, poster})
     }
 

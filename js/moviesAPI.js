@@ -1,4 +1,5 @@
 import key from "./key.js"
+
 //get movie by id
 export const getMovie = async (id) => {
     try {

@@ -2,10 +2,10 @@
   "movies": [
     {
       "id": 1,
-      "title": "Shrek 3",
+      "title": "Shrek 4",
       "rating": 5,
       "genre": "comedy",
-      "poster": "https://image.tmdb.org/t/p/original/n4SexGGQzI26E269tfpa80MZaGV.jpg"
+      "poster": "https://image.tmdb.org/t/p/original/6HrfPZtKcGmX2tUWW3cnciZTaSD.jpg"
     },
     {
       "title": "Karate Kid",
